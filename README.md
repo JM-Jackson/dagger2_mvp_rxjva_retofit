@@ -1,2 +1,0 @@
-# dagger2_mvp_rxjva_retofit
-基于dagger2_mvp_rxjva_retofit封装的开发框架，图片加载使用Glide 内部封装基础Base类，对P层生命周期管理，采用屏幕适配方案，Demo近10个页面进行简单演示
