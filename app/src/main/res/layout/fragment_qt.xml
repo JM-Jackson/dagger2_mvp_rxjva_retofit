@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/bg_comm"
+        android:gravity="center"
+        android:text="趣图"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_18" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/scrollView"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_200">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"></android.support.v4.view.ViewPager>
+
+                <LinearLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:orientation="horizontal"></LinearLayout>
+            </FrameLayout>
+
+            <com.comagic.tabler.common.ScrollListView
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/list"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:divider="@color/white"
+                android:dividerHeight="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"></com.comagic.tabler.common.ScrollListView>
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+</LinearLayout>

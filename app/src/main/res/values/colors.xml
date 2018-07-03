@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="translucent_background">#5c000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="orange_light_product">#F3D8BD</color>
+    <color name="theme_color_travel">#EFC500</color>
+    <color name="orange_trip">#E3BC46</color>
+    <color name="orange_product_black">#7fEA7112</color>
+
+
+    <color name="pay_color">#fff4f4</color>
+
+
+    <color name="orange_title_bar">#f3702b</color>
+    <color name="orange_text_color">#FB8B59</color>
+
+    <color name="orange_title">#FFF86049</color>
+    <color name="orange_red_black">#7fF03A1A</color>
+    <color name="orange_light">#fb6f36</color>
+    <color name="orange_pressed">#FF6D00</color>
+    <color name="orange_seekbar">#ffa42f</color>
+    <color name="orange_bg">#ee6735</color>
+    <color name="orange_button">#fe8545</color>
+    <color name="sort_button">#f85f48</color>
+    <color name="orange_profit_bg">#fc884f</color>
+    <color name="btn_color">#ff521d</color>
+    <color name="orange">#FF5500</color>
+    <color name="g_orage_color">#ff521d</color>
+    <color name="theme_color_order">#FB5058</color>
+    <color name="orange_product">#EA7112</color>
+    <color name="brick_red">#ff521d</color>
+    <color name="orange_red">#F03A1A</color>
+    <color name="trip_text_orange_red">#F03A1B</color>
+    <color name="red_pressed">#DD2C00</color>
+    <color name="index_red">#dd434d</color>
+    <color name="red">#FE0000</color>
+
+    <color name="former_blue">#008cff</color>
+    <color name="deep_blue">#000099</color>
+
+    <color name="linear_bg">#fefefe</color>
+    <color name="gray_white">#ffececec</color>
+    <color name="gray_title">#f8f8f8</color>
+    <color name="btn_bg">#f5f5f5</color>
+    <color name="common_stock">#f590f5</color>
+    <color name="common_bg_gray2">#F2F2F2</color>
+    <color name="common_bg_gray">#F2F0F0</color>
+    <color name="bg_color">#F0F0F0</color>
+    <color name="common_stock_bg">#eeeeee</color>
+    <color name="gray2">#f2f2f2</color>
+    <color name="gray4">#e5e5e5</color>
+    <color name="gray6">#f6f6f6</color>
+    <color name="gray5">#f5f5f5</color>
+    <color name="line_comm">#efefef</color>
+    <color name="gray7">#e7e7e7</color>
+    <color name="gray10">#a0a0a0</color>
+    <color name="line_gray6">#e6e6e6</color>
+    <color name="line_gray5">#e5e5e5</color>
+    <color name="listen_bg">#e3e7e8</color>
+    <color name="gray_title_line">#d3d3d3</color>
+    <color name="listen_line_bg">#d0d1d3</color>
+    <color name="line">#E5E5E5</color>
+    <color name="text_grayc">#cccccc</color>
+    <color name="record_item">#b7b7b7</color>
+    <color name="recommend_products_item_line">#b6b6b6</color>
+    <color name="line_gray2">#b2b2b2</color>
+    <color name="text_gray">#a6a6a6</color>
+    <color name="gray">#9e9e9e</color>
+    <color name="gray9">#999999</color>
+    <color name="gray_pressed">#9E9E9E</color>
+    <color name="light_gray">#ff999999</color>
+    <color name="bg_gray">#f5f5f5</color>
+    <color name="font_gray">#8E8E8E</color>
+    <color name="font_gray7">#7a7a7a</color>
+    <color name="font_grey">#6f6f6f</color>
+    <color name="grayfont">#666666</color>
+    <color name="font_q_color">#666666</color>
+    <color name="black_light">#5C5643</color>
+    <color name="store_gray_light">#5B5C5D</color>
+    <color name="font_black">#484848</color>
+    <color name="translate_color">#443f38</color>
+    <color name="font_color">#333333</color>
+    <color name="black">#000000</color>
+
+    <color name="bg_comm">#F5F5F5</color>
+    <color name="bg_image">#44e6d3</color>
+    <color name="bg_hb">#C6C6C6</color>
+    <color name="font_red">#F85F48</color>
+
+
+    <color name="ksw_md_ripple_normal">#1E000000</color>
+    <color name="ksw_md_ripple_checked">#33019285</color>
+
+
+    <color name="ksw_md_solid_shadow">#33000000</color>
+
+    <color name="ksw_md_solid_normal">#ECECEC</color>
+    <color name="ksw_md_solid_checked">#019285</color>
+    <color name="ksw_md_solid_disable">#FFFFFF</color>
+    <color name="ksw_md_solid_checked_disable">#aaaaaa</color>
+    <color name="text_color">#959595</color>
+
+    <color name="divider_gray">#E5E5E5</color>
+
+
+    <color name="line_gray">#dcdcdc</color>
+
+    <color name="csst_home_mask_bg">#80000000</color>
+
+    <color name="praise_text_bg">#f17866</color>
+
+
+
+</resources>
