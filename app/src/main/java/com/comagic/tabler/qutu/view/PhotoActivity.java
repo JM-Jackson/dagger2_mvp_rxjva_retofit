@@ -17,7 +17,7 @@ import uk.co.senab.photoview.PhotoView;
 /**
  * 作者: leiyuanxin
  * 时间: 2017/9/11 11:10
- * 邮箱: leiyuanxin@eims.com.cn
+ * 邮箱: leiyuanxin@outlook.com
  * 描述：
  */
 

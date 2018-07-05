@@ -19,6 +19,8 @@ import com.comagic.tabler.common.base.IView;
 import com.comagic.tabler.common.base.MVPBaseFragment;
 import com.comagic.tabler.common.util.ImagerLoad;
 import com.comagic.tabler.qutu.callback.IQtView;
+import com.comagic.tabler.qutu.di.DaggerQTComponet;
+import com.comagic.tabler.qutu.di.QTModule;
 import com.comagic.tabler.qutu.model.BannerBean;
 import com.comagic.tabler.qutu.model.QtBaan;
 import com.comagic.tabler.qutu.model.QtListBean;
@@ -38,7 +40,7 @@ import butterknife.ButterKnife;
 /**
  * 作者: leiyuanxin
  * 时间: 2017/9/8 10:52
- * 邮箱: leiyuanxin@eims.com.cn
+ * 邮箱: leiyuanxin@outlook.com
  * 描述：
  */
 
@@ -71,7 +73,8 @@ public class QTFragment extends MVPBaseFragment<QtPresenter> implements IQtView 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mPresenter = new QtPresenter(context,QTFragment.this);
+//        mPresenter = new QtPresenter(context,QTFragment.this);
+        DaggerQTComponet.builder().qTModule(new QTModule(context,this)).build().inject(this);
         mPresenter.load(page, maxResult);
 
         adapter = new QtAdapter(context);

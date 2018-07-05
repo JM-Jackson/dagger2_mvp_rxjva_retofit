@@ -9,7 +9,7 @@ import me.imid.swipebacklayout.lib.SwipeBackLayout;
 /**
  * 作者: leiyuanxin
  * 时间: 2017/9/11 15:34
- * 邮箱: leiyuanxin@eims.com.cn
+ * 邮箱: leiyuanxin@outlook.com
  * 描述：
  */
 

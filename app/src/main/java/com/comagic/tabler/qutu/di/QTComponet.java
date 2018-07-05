@@ -1,5 +1,8 @@
 package com.comagic.tabler.qutu.di;
 
+import com.comagic.tabler.qutu.view.QTFragment;
+import com.comagic.tabler.tushu.view.TSFragment;
+
 import dagger.Component;
 
 /**
@@ -9,5 +12,5 @@ import dagger.Component;
  */
 @Component(modules = QTModule.class)
 public interface QTComponet {
-
+    void inject(QTFragment fragment);
 }

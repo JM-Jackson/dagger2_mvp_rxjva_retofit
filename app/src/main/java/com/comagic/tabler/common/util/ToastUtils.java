@@ -8,7 +8,7 @@ import com.comagic.tabler.MyApplication;
 /**
  * 作者: leiyuanxin
  * 时间: 2017/9/8 17:18
- * 邮箱: leiyuanxin@eims.com.cn
+ * 邮箱: leiyuanxin@outlook.com
  * 描述：
  */
 

@@ -10,7 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 /**
  * 作者: leiyuanxin
  * 时间: 2017/9/8 14:25
- * 邮箱: leiyuanxin@eims.com.cn
+ * 邮箱: leiyuanxin@outlook.com
  * 描述：图片加载类
  */
 

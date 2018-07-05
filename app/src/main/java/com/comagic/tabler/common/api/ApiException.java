@@ -3,7 +3,7 @@ package com.comagic.tabler.common.api;
 /**
  * 作者: leiyuanxin
  * 时间: 2017/9/8 10:52
- * 邮箱: leiyuanxin@eims.com.cn
+ * 邮箱: leiyuanxin@outlook.com
  * 描述：异常类，当获取的数据不是我们需要时，抛出异常
  *
  */

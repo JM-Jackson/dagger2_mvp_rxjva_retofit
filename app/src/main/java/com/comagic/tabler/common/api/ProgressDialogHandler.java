@@ -12,7 +12,7 @@ import com.comagic.tabler.common.dialog.MyDialog;
 /**
  * 作者: leiyuanxin
  * 时间: 2017/9/8 10:52
- * 邮箱: leiyuanxin@eims.com.cn
+ * 邮箱: leiyuanxin@outlook.com
  * 描述： 控制缓冲框显示与隐藏
  */
 public class ProgressDialogHandler extends Handler {
