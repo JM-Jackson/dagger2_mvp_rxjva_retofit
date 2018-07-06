@@ -26,7 +26,9 @@ public abstract class MVPBaseFragment <P extends BasePresenter> extends BaseFrag
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mPresenter.detachView();
-        mPresenter = null;
+        if (mPresenter!=null){
+            mPresenter.detachView();
+            mPresenter = null;
+        }
     }
 }
