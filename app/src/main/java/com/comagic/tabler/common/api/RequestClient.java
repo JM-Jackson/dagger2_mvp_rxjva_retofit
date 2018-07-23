@@ -32,6 +32,8 @@ public class RequestClient {
     public static final String BASE_URL = "http://route.showapi.com/";
     public static final String IMAGE_URL = "http://route.showapi.com/";
     public static final String Banner = "http://app.cctax.com.cn/app/";
+    public static final String Qt_PAI_URL = "http://wallpaper.apc.360.cn/";
+
 
 
 
@@ -101,10 +103,12 @@ public class RequestClient {
 
     /**
      * 趣图列表
+     * //    http://wallpaper.apc.360.cn/index.php?c=WallPaperAndroid&a=getAppsByCategory&cid=6&start=1&count=10
+     * start  图片起始位置
+     * count  个数
      */
-    public Observable<QtListBean> getqtlist(int page, int  maxResult) {
-        return mServerApi.getqtlist("45563", "6f78c9f71ab94ed2b855f5555e2ff73c",page,maxResult)
-                .map(new HttpResultFuc<QtListBean>())
+    public Observable<QtListBean> getqtlist(int start, int  count) {
+        return mServerApi.getqtlist("WallPaperAndroid", "getAppsByCategory",6,start,count)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
 

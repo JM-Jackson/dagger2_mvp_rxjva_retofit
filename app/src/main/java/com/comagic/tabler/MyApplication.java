@@ -3,6 +3,8 @@ package com.comagic.tabler;
 import android.app.Application;
 import android.content.Context;
 
+import com.comagic.tabler.common.api.RequestClient;
+
 import me.jessyan.retrofiturlmanager.RetrofitUrlManager;
 
 
@@ -21,7 +23,8 @@ public class MyApplication extends Application {
         super.onCreate();
         appContext = this;
         RetrofitUrlManager.getInstance().setDebug(true);
-        RetrofitUrlManager.getInstance().putDomain("showapi", "http://route.showapi.com/");
-        RetrofitUrlManager.getInstance().putDomain("banner", "http://app.cctax.com.cn/app");
+        RetrofitUrlManager.getInstance().putDomain("showapi", RequestClient.BASE_URL);
+        RetrofitUrlManager.getInstance().putDomain("banner", RequestClient.Banner);
+        RetrofitUrlManager.getInstance().putDomain("qutu", RequestClient.Qt_PAI_URL);
     }
 }

@@ -39,12 +39,12 @@ public class QtAdapter extends MyBaseAdatpter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        QtListBean.ContentlistBean data = (QtListBean.ContentlistBean) datas.get(i);
+        QtListBean.DataBean data = (QtListBean.DataBean) datas.get(i);
 
 
-        viewHolder.time.setText(data.getCt());
-        viewHolder.title.setText(data.getTitle());
-        ImagerLoad.load(context, data.getImg(), viewHolder.photo);
+        viewHolder.time.setText(data.getC_t());
+        viewHolder.title.setText(data.getPid());
+        ImagerLoad.load(context, data.getUrl(), viewHolder.photo);
 
         return view;
     }

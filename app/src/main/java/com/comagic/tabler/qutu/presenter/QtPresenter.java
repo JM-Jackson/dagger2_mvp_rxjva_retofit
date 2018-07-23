@@ -33,8 +33,8 @@ public class QtPresenter extends BasePresenter<IQtView> {
     }
 
 
-    public void load(int page,int maxResult){
-        Observable.zip(mRequestClient.getqtlist(page, maxResult), mRequestClient.getBanner(), new Func2<QtListBean, BannerBean, QtBaan>() {
+    public void load(int start, int  count){
+        Observable.zip(mRequestClient.getqtlist(start, count), mRequestClient.getBanner(), new Func2<QtListBean, BannerBean, QtBaan>() {
             @Override
             public QtBaan call(QtListBean qtListBean, BannerBean bannerBean) {
 
@@ -50,20 +50,20 @@ public class QtPresenter extends BasePresenter<IQtView> {
     }
 
 
-    public void pulldown(int page,int maxResult){
-//        mRequestClient.getqtlist(page,maxResult).subscribe(new ProgressSubscriber<QtListBean>(mContext) {
-//            @Override
-//            public void onNext(QtListBean data) {
-//
-//                getView().onPulldown(data);
-//            }
-//            @Override
-//            public void onError(Throwable e) {
-//                super.onError(e);
-//
-//                getView().onPulldown(new QtListBean());
-//            }
-//        });
+    public void pulldown(int start, int  count){
+        mRequestClient.getqtlist(start,count).subscribe(new ProgressSubscriber<QtListBean>(mContext) {
+            @Override
+            public void onNext(QtListBean data) {
+
+                getView().onPulldown(data);
+            }
+            @Override
+            public void onError(Throwable e) {
+                super.onError(e);
+
+                getView().onPulldown(new QtListBean());
+            }
+        });
     }
 
 }

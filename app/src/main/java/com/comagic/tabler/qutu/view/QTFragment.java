@@ -55,8 +55,8 @@ public class QTFragment extends MVPBaseFragment<QtPresenter> implements IQtView 
     @Bind(R.id.scrollView)
     PullToRefreshScrollView scrollView;
 
-    private int page = 1;
-    private int maxResult = 10;
+    private int start = 0;
+    private int count = 10;
     private QtAdapter adapter;
 
     private BannerAdapter bannerAdapter;
@@ -75,7 +75,7 @@ public class QTFragment extends MVPBaseFragment<QtPresenter> implements IQtView 
         super.onActivityCreated(savedInstanceState);
 //        mPresenter = new QtPresenter(context,QTFragment.this);
         DaggerQTComponet.builder().qTModule(new QTModule(context,this)).build().inject(this);
-        mPresenter.load(page, maxResult);
+        mPresenter.load(start, count);
 
         adapter = new QtAdapter(context);
         list.setAdapter(adapter);
@@ -83,21 +83,22 @@ public class QTFragment extends MVPBaseFragment<QtPresenter> implements IQtView 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                QtListBean.ContentlistBean data = (QtListBean.ContentlistBean) adapter.getData().get(i);
-                PhotoActivity.go(context,data.getImg(),data.getTitle());
+                QtListBean.DataBean data = (QtListBean.DataBean) adapter.getData().get(i);
+                PhotoActivity.go(context,data.getUrl(),data.getPid());
             }
         });
 
         scrollView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ScrollView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ScrollView> refreshView) {
-                page=1;
-                mPresenter.load(page, maxResult);
+                start=0;
+                mPresenter.load(start, count);
             }
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ScrollView> refreshView) {
-                mPresenter.pulldown(page, maxResult);
+                start += count;
+                mPresenter.pulldown(start, count);
             }
         });
 
@@ -175,17 +176,15 @@ public class QTFragment extends MVPBaseFragment<QtPresenter> implements IQtView 
 
     private void onRefreshComplete(QtListBean data) {
         scrollView.onRefreshComplete();
-        if (data.getAllNum()>page){
-            if (page==1){
-                adapter.setData(data.getContentlist());
+        if (data.getData().size()==count){
+            if (start==0){
+                adapter.setData(data.getData());
             }else {
-                adapter.addData(data.getContentlist());
+                adapter.addData(data.getData());
             }
-            page++;
-            adapter.addData(data.getContentlist());
             scrollView.setMode(PullToRefreshBase.Mode.BOTH);
         }else {
-            adapter.addData(data.getContentlist());
+            adapter.addData(data.getData());
             scrollView.setMode(PullToRefreshBase.Mode.PULL_FROM_START);
         }
     }
