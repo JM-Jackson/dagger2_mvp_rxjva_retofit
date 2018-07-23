@@ -10,6 +10,7 @@ import com.comagic.tabler.xinwen.model.XwTypeListBean;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import rx.Observable;
 
@@ -36,6 +37,7 @@ public interface ServerAPI {
     Observable<HttpResult<QtListBean>> getqtlist(@Field("showapi_appid") String showapi_appid, @Field("showapi_sign") String showapi_sign,
                                                  @Field("page") int page, @Field("maxResult") int maxResult);
 
+    @Headers({"Domain-Name: banner"}) // Add the Domain-Name header
     @POST("queryAppIndexBanner.do")
     Observable<BannerBean> getBanner();
 

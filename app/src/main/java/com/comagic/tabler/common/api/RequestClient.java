@@ -12,6 +12,7 @@ import com.google.gson.Gson;
 
 import java.util.concurrent.TimeUnit;
 
+import me.jessyan.retrofiturlmanager.RetrofitUrlManager;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -19,7 +20,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-
 /**
  * 创建时间： 2017/9/8.
  * 创建人： leiyuanxin
@@ -31,6 +31,7 @@ public class RequestClient {
 
     public static final String BASE_URL = "http://route.showapi.com/";
     public static final String IMAGE_URL = "http://route.showapi.com/";
+    public static final String Banner = "http://app.cctax.com.cn/app/";
 
 
 
@@ -50,14 +51,14 @@ public class RequestClient {
 
     private RequestClient() {
 
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        OkHttpClient.Builder builder = RetrofitUrlManager.getInstance().with(new OkHttpClient.Builder());
         builder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
         builder.retryOnConnectionFailure(false);
         //拦截器－添加公共字段
         builder.addInterceptor(new CommonInterceptor());
         builder.addNetworkInterceptor(new LoggingInterceptor());
-
         OkHttpClient okHttpClient = builder.build();
+
         mRetrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -68,27 +69,6 @@ public class RequestClient {
         mServerApi = mRetrofit.create(ServerAPI.class);
     }
 
-
-    private ServerAPI  Banner() {
-
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
-        builder.retryOnConnectionFailure(false);
-        //拦截器－添加公共字段
-        builder.addInterceptor(new CommonInterceptor());
-        builder.addNetworkInterceptor(new LoggingInterceptor());
-
-        OkHttpClient okHttpClient = builder.build();
-        mRetrofit = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create(new Gson()))
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .client(okHttpClient)
-                .baseUrl("http://app.cctax.com.cn/app/")
-                .build();
-
-        ServerAPI  mServerApi = mRetrofit.create(ServerAPI.class);
-        return mServerApi;
-    }
 
     public static RequestClient getInstance() {
         if (null == requestClient) {
@@ -101,7 +81,7 @@ public class RequestClient {
      * 获取新闻列表
      */
     public Observable<XwListBean> getxwList(int page, int  maxResult,String channelId) {
-        return mServerApi.getxwList("45563", "6f78c9f71ab94ed2b855f5555e2ff73c",page,maxResult,channelId)
+        return mServerApi.getxwList("70348", "0481b5c01336461b9601e0d293f51926",page,maxResult,channelId)
                 .map(new HttpResultFuc<XwListBean>())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
@@ -111,7 +91,7 @@ public class RequestClient {
      * 获取新闻类型
      */
     public Observable<XwTypeListBean> getxwType(int page, int  maxResult) {
-        return mServerApi.getxwType("45563", "6f78c9f71ab94ed2b855f5555e2ff73c",page,maxResult)
+        return mServerApi.getxwType("70348", "0481b5c01336461b9601e0d293f51926",page,maxResult)
                 .map(new HttpResultFuc<XwTypeListBean>())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
@@ -130,14 +110,15 @@ public class RequestClient {
 
     }
 
+    //获取Banner
     public Observable<BannerBean> getBanner() {
-        return Banner().getBanner()
+        return mServerApi.getBanner()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
 
     }
 
-
+    //获取图书类型
     public Observable<TsTypeBean> getTsTypelist() {
         return mServerApi.getTsTypelist("45563", "6f78c9f71ab94ed2b855f5555e2ff73c")
                 .map(new HttpResultFuc<TsTypeBean>())
@@ -146,7 +127,7 @@ public class RequestClient {
 
     }
 
-
+    //获取图书列表
     public Observable<TsListBean> getTsList(int page, int  limit,String id) {
         return mServerApi.getTsList("45563", "6f78c9f71ab94ed2b855f5555e2ff73c",page,limit,id)
                 .map(new HttpResultFuc<TsListBean>())
@@ -155,7 +136,7 @@ public class RequestClient {
 
     }
 
-
+    //获取图书详情
     public Observable<TsInfoBean> getTsInfo(String id) {
         return mServerApi.getTsInfo("45563", "6f78c9f71ab94ed2b855f5555e2ff73c",id)
                 .map(new HttpResultFuc<TsInfoBean>())

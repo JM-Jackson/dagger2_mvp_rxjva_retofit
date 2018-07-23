@@ -52,4 +52,5 @@ dependencies {
     //java注解
     compile 'org.glassfish:javax.annotation:10.0-b28'
 
+    compile 'me.jessyan:retrofit-url-manager:1.4.0'
 }

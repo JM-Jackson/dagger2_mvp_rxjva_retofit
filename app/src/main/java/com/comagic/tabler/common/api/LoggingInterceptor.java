@@ -35,6 +35,8 @@ public class LoggingInterceptor implements Interceptor {
                 }
                 sb.delete(sb.length() - 1, sb.length());
                 fullUrl = String.format("%s?%s",request.url(), sb.toString());
+            }else {
+                fullUrl = String.format("%s", request.url());
             }
         } else {
             fullUrl = String.format("%s", request.url());

@@ -72,6 +72,8 @@ public class CommonInterceptor implements Interceptor {
                 }
                 sb.delete(sb.length() - 1, sb.length());
                 fullUrl = String.format("%s?%s",oldRequest.url(), sb.toString());
+            }else {
+                fullUrl = String.format("%s", oldRequest.url());
             }
         } else {
             fullUrl = String.format("%s", oldRequest.url());

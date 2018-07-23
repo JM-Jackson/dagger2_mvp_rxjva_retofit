@@ -51,19 +51,19 @@ public class QtPresenter extends BasePresenter<IQtView> {
 
 
     public void pulldown(int page,int maxResult){
-        mRequestClient.getqtlist(page,maxResult).subscribe(new ProgressSubscriber<QtListBean>(mContext) {
-            @Override
-            public void onNext(QtListBean data) {
-
-                getView().onPulldown(data);
-            }
-            @Override
-            public void onError(Throwable e) {
-                super.onError(e);
-
-                getView().onPulldown(new QtListBean());
-            }
-        });
+//        mRequestClient.getqtlist(page,maxResult).subscribe(new ProgressSubscriber<QtListBean>(mContext) {
+//            @Override
+//            public void onNext(QtListBean data) {
+//
+//                getView().onPulldown(data);
+//            }
+//            @Override
+//            public void onError(Throwable e) {
+//                super.onError(e);
+//
+//                getView().onPulldown(new QtListBean());
+//            }
+//        });
     }
 
 }
