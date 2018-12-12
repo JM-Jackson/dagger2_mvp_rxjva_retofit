@@ -8,12 +8,12 @@ import com.comagic.tabler.common.util.ToastUtils;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
-import rx.Subscriber;
+import io.reactivex.observers.ResourceObserver;
 
 /**
  * 带有缓冲框的dialog
  */
-public abstract class ProgressSubscriber<T> extends Subscriber<T> implements ProgressDialogListener {
+public abstract class ProgressSubscriber<T> extends ResourceObserver<T> implements ProgressDialogListener {
 
     /**
      * 上下文
@@ -56,8 +56,8 @@ public abstract class ProgressSubscriber<T> extends Subscriber<T> implements Pro
         if(!NetworkUtils.isNetworkAvailable(context)){
 
             ToastUtils.showShort("网络中断，请检查您的网络状态");
-            if (!this.isUnsubscribed()) {
-                this.unsubscribe();
+            if (!this.isDisposed()) {
+                this.dispose();
             }
             onFinish();
             return;
@@ -67,12 +67,9 @@ public abstract class ProgressSubscriber<T> extends Subscriber<T> implements Pro
         }
     }
 
-
-
     @Override
-    public void onCompleted() {
+    public void onComplete() {
         dismissProgressDialog();
-
     }
 
     @Override
@@ -108,8 +105,8 @@ public abstract class ProgressSubscriber<T> extends Subscriber<T> implements Pro
      */
     @Override
     public void onCancelProgress() {
-        if (!this.isUnsubscribed()) {
-            this.unsubscribe();
+        if (!this.isDisposed()) {
+            this.dispose();
         }
     }
 

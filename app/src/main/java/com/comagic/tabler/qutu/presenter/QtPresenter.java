@@ -16,8 +16,9 @@ import com.comagic.tabler.qutu.view.QTFragment;
 
 import javax.inject.Inject;
 
-import rx.Observable;
-import rx.functions.Func2;
+import io.reactivex.Observable;
+import io.reactivex.functions.BiFunction;
+
 
 /**
  * 作者: leiyuanxin
@@ -34,19 +35,21 @@ public class QtPresenter extends BasePresenter<IQtView> {
 
 
     public void load(int start, int  count){
-        Observable.zip(mRequestClient.getqtlist(start, count), mRequestClient.getBanner(), new Func2<QtListBean, BannerBean, QtBaan>() {
+        Observable.zip(mRequestClient.getqtlist(start, count), mRequestClient.getBanner(), new BiFunction<QtListBean, BannerBean, Object>() {
             @Override
-            public QtBaan call(QtListBean qtListBean, BannerBean bannerBean) {
-
+            public QtBaan apply(QtListBean qtListBean, BannerBean bannerBean) {
                 return new QtBaan(bannerBean,qtListBean);
             }
-        }).subscribe(new ProgressSubscriber<QtBaan>(mContext) {
-            @Override
-            public void onNext(QtBaan qtBaan) {
 
-                getView().Succeed(qtBaan);
+        }).subscribe(new ProgressSubscriber<Object>(mContext) {
+            @Override
+            public void onNext(Object o) {
+
+                getView().Succeed((QtBaan) o);
             }
+
         });
+
     }
 
 

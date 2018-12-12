@@ -8,13 +8,14 @@ import com.comagic.tabler.tushu.model.TsTypeBean;
 import com.comagic.tabler.xinwen.model.XwListBean;
 import com.comagic.tabler.xinwen.model.XwTypeListBean;
 
+import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
-import rx.Observable;
+
 
 /**
  * 创建时间： 2017/9/8.

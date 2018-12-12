@@ -37,11 +37,28 @@ dependencies {
 
     //rxjava + retrofit
     implementation 'com.squareup.okhttp3:logging-interceptor:3.1.2'
-    implementation 'io.reactivex:rxjava:1.2.1'
-    implementation 'io.reactivex:rxandroid:1.2.1'
-    implementation 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
-    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    implementation('com.squareup.retrofit2:retrofit:2.4.0') {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+    }
+    implementation('com.squareup.retrofit2:converter-gson:2.4.0') {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+
+    implementation('com.squareup.retrofit2:adapter-rxjava2:2.4.0') {
+        exclude module: 'rxjava'
+        exclude module: 'okhttp'
+        exclude module: 'retrofit'
+        exclude module: 'okio'
+    }
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+
+    implementation('io.reactivex.rxjava2:rxandroid:2.0.2') {
+        exclude module: 'rxjava'
+    }
 
     implementation 'com.github.bumptech.glide:glide:3.5.2'
     implementation 'com.github.chrisbanes:PhotoView:1.2.6'
