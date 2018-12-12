@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,7 +18,7 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 /**
  * 只是为了打Activity的生命周期
  */
-public class BaseLogActivity extends SwipeBackActivity {
+public class BaseLogActivity extends AppCompatActivity {
 
     protected final String TAG = "BaseActivityFragment";
     protected final String Name = this.getClass().getSimpleName();

@@ -10,6 +10,12 @@
         android:textColor="@color/black"
         android:text="图书"
         android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="暂无数据模块"
+        android:gravity="center_horizontal"/>
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/list"
         android:divider="@color/gray7"

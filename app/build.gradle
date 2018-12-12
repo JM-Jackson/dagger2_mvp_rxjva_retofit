@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 //添加如下代码，应用apt插件
-apply plugin: 'com.neenbedankt.android-apt'
+//apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '28.0.0'
     defaultConfig {
         applicationId "com.example.rxjava_mvp_retrofit"
         minSdkVersion 15
@@ -22,35 +22,35 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.+'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:23.+'
+    testImplementation 'junit:junit:4.12'
 
 //     //注解框架
-    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    annotationProcessor'com.jakewharton:butterknife:7.0.1'
 
-    compile 'com.zxman:pulltorefresh:1.0.1'
+    implementation 'com.zxman:pulltorefresh:1.0.1'
 
     //rxjava + retrofit
-    compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
-    compile 'io.reactivex:rxjava:1.2.1'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.1.2'
+    implementation 'io.reactivex:rxjava:1.2.1'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 
-    compile 'com.github.bumptech.glide:glide:3.5.2'
+    implementation 'com.github.bumptech.glide:glide:3.5.2'
+    implementation 'com.github.chrisbanes:PhotoView:1.2.6'
+    implementation 'me.imid.swipebacklayout.lib:library:1.0.0'
 
-    compile 'com.github.chrisbanes:PhotoView:1.2.6'
-    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
-
-    compile 'com.google.dagger:dagger:2.6'
-    apt 'com.google.dagger:dagger-compiler:2.6'
+    implementation 'com.google.dagger:dagger:2.6'
+    annotationProcessor  'com.google.dagger:dagger-compiler:2.6'
     //java注解
-    compile 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
 
-    compile 'me.jessyan:retrofit-url-manager:1.4.0'
+    implementation 'me.jessyan:retrofit-url-manager:1.4.0'
 }

@@ -18,9 +18,9 @@ public class BackBaseActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SwipeBackLayout mSwipeBackLayout = getSwipeBackLayout();
-        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-        mSwipeBackLayout.setEdgeSize(400);
+//        SwipeBackLayout mSwipeBackLayout = getSwipeBackLayout();
+//        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+//        mSwipeBackLayout.setEdgeSize(400);
 
     }
 }

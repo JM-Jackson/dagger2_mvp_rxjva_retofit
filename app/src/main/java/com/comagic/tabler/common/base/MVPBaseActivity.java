@@ -17,13 +17,13 @@ public abstract class MVPBaseActivity<P extends BasePresenter> extends BaseActiv
     @Nullable
     protected P mPresenter;
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
 
     @Override
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         if (mPresenter!=null){
             mPresenter.detachView();

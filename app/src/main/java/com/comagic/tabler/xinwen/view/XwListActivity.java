@@ -3,25 +3,19 @@ package com.comagic.tabler.xinwen.view;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.comagic.tabler.R;
-import com.comagic.tabler.common.base.BackBaseActivity;
-import com.comagic.tabler.common.base.BaseActivity;
-import com.comagic.tabler.common.base.IView;
 import com.comagic.tabler.common.base.MVPBaseActivity;
-import com.comagic.tabler.common.base.MVPBaseFragment;
 import com.comagic.tabler.xinwen.callback.IXwListView;
 import com.comagic.tabler.xinwen.di.DaggerXWListComponet;
 import com.comagic.tabler.xinwen.di.XWModule;
 import com.comagic.tabler.xinwen.model.XwListBean;
 import com.comagic.tabler.xinwen.presenter.XwPresenter;
 import com.comagic.tabler.xinwen.view.adapter.XwAdapter;
-import com.comagic.tabler.xinwen.view.adapter.XwTypeAdapter;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -56,7 +50,7 @@ public class XwListActivity extends MVPBaseActivity<XwPresenter> implements IXwL
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xw);
         ButterKnife.bind(this);
